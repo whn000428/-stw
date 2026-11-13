@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#153d32"><title>头像合成大西瓜</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+ <header><a class="brand" href="#" aria-label="头像合成大西瓜首页"><span class="brand-mark">◒</span>小小合成局<span class="edition">FRIENDS EDITION</span></a><button id="restart" class="quiet">↻ <span>重新开始</span></button></header>
+ <main>
+  <section class="intro"><div class="eyebrow"><span></span>头像版 · 合成大西瓜</div><h1>碰个面，<br>合成一片<span class="green-word">绿。</span></h1><p class="intro-copy">熟悉的头像，不一样的碰面方式。<br>让相同头像相遇，一路合成最终的草地。</p>
+   <div class="goal-card"><div class="goal-icon" id="goal-avatar"></div><div><span class="tiny">本局终点</span><strong>合成这片绿</strong><span class="goal-caption">第 11 级 · 终极大西瓜</span></div><span class="sparkle">✦</span></div>
+   <div class="instructions"><div><span class="step">01</span><p>移动瞄准，点击或松手投放</p></div><div><span class="step">02</span><p>两个相同头像碰撞，升级合成</p></div><div><span class="step">03</span><p>别让头像持续堆过警戒线</p></div></div>
+   <div class="keyboard">也可以使用 <kbd>←</kbd> <kbd>→</kbd> 瞄准，<kbd>空格</kbd> 投放</div>
+  </section>
+  <section class="play-area" aria-label="合成游戏">
+   <div class="scoreboard"><div><span>本局得分</span><strong id="score">0</strong></div><div class="best"><span>最高纪录</span><strong id="best">0</strong></div><button id="pause" aria-label="暂停游戏" class="pause">Ⅱ</button></div>
+   <div class="board-wrap">
+    <canvas id="game" width="420" height="640" tabindex="0" aria-label="合成大西瓜游戏区域。左右方向键瞄准，空格投放。相同头像碰撞会升级。">请使用支持 Canvas 的浏览器游玩。</canvas>
+    <div id="overlay" class="overlay" hidden><div class="dialog"><span id="modal-icon">◒</span><h2 id="modal-title">暂停一下</h2><p id="modal-text">头像们在等你回来。</p><button id="primary" class="primary">继续游戏</button><button id="secondary" class="secondary" hidden>继续当前游戏</button></div></div>
+    <div id="toast" class="toast" aria-live="polite"></div>
+   </div>
+   <div class="board-footer"><div><span class="status-dot"></span><span id="status">加载头像中…</span></div><div class="next-label">下一个 <span id="next-avatar" class="mini-avatar"></span></div></div>
+   <p class="touch-hint">按住拖动瞄准 · 松手落下</p>
+  </section>
+  <aside class="evolution"><div class="evolution-title"><span class="tiny">合成路线</span><span id="progress">1 / 11</span></div><div id="ladder" class="ladder"></div><p class="rotation-note">20 个头像轮换登场<br>每局 10 个 + 固定终点</p></aside>
+ </main>
+ <footer>不着急，总会合成的。<span>仅在本机记录最高分 · 无需登录游戏账号</span></footer>
+</div>
+<script src="avatars.js"></script><script src="physics.js"></script><script src="game.js"></script>
+</body></html>
